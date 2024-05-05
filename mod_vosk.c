@@ -308,7 +308,7 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_vosk_load)
 	ks_init();
 
 	ks_pool_open(&globals.ks_pool);
-	ks_global_set_default_logger(7);
+	ks_global_set_default_logger_prefix(7);
 
 	if ((switch_event_bind_removable(modname, SWITCH_EVENT_RELOADXML, NULL, event_handler, NULL, &NODE) != SWITCH_STATUS_SUCCESS)) {
 		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "Couldn't bind!\n");
